@@ -1,0 +1,509 @@
+"""
+王梓钰 Wiki 后端 API
+完全对齐 api.yinlin.wiki 接口格式，数据从 JSON 文件读取
+"""
+from fastapi import FastAPI, Query, Response
+from fastapi.middleware.cors import CORSMiddleware
+from typing import Optional, List
+import json, os, urllib.request, urllib.error
+from datetime import datetime, date
+
+app = FastAPI(title="王梓钰 Wiki API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ============================================================
+# 数据加载
+# ============================================================
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
+def load(filename: str):
+    path = os.path.join(DATA_DIR, filename)
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+MUSIC = load("music.json")
+MUSIC_ATTR = load("music_attr.json")
+ACTIVITY = load("activity.json")
+VIDEO = load("video.json")
+VIDEO_ATTR = load("video_attr.json")
+PIC = load("pic.json")
+PIC_ATTR = load("pic_attr.json")
+MUSEUM = load("museum.json")
+MUSEUM_ATTR = load("museum_attr.json")
+
+# ============================================================
+# 响应格式
+# ============================================================
+
+def ok(data, total=None):
+    resp = {"status": 0, "msg": "Success", "data": data}
+    if total is not None:
+        resp["total"] = total
+    return resp
+
+def err(msg="Not Found"):
+    return {"status": 1, "msg": msg, "data": None}
+
+# ============================================================
+# 音乐接口
+# ============================================================
+
+@app.get("/music/latest")
+def music_latest():
+    """返回最新 6 首（有封面优先）"""
+    return ok(MUSIC[:6])
+
+@app.get("/music/filter")
+def music_filter(
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=200),
+    q: str = Query(""),
+    music_type: Optional[List[str]] = Query(None, alias="music_type"),
+    language: Optional[List[str]] = Query(None, alias="language"),
+    solo: Optional[List[str]] = Query(None, alias="solo"),
+):
+    data = MUSIC[:]
+    if q:
+        q_lower = q.lower()
+        data = [m for m in data if q_lower in m["name"].lower() or q_lower in (m.get("note") or "").lower()]
+    if music_type:
+        data = [m for m in data if m["music_type"] in music_type]
+    if language:
+        data = [m for m in data if m["language"] in language]
+    if solo:
+        data = [m for m in data if m["solo"] in solo]
+    total = len(data)
+    start = (page - 1) * size
+    return ok(data[start:start + size], total=total)
+
+@app.get("/music/detail")
+def music_detail(id: str):
+    item = next((m for m in MUSIC if m["id"] == id), None)
+    if not item:
+        return err("歌曲不存在")
+    return ok(item)
+
+@app.get("/music/attr")
+def music_attr():
+    return ok(MUSIC_ATTR)
+
+# ============================================================
+# 动态接口
+# ============================================================
+
+@app.get("/activity/filter")
+def activity_filter(
+    time_type: str = Query("future"),
+    page: int = Query(1, ge=1),
+    size: int = Query(100, ge=1, le=500),
+):
+    today = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    if time_type == "future":
+        data = [a for a in ACTIVITY if a["time"] >= today]
+        data = sorted(data, key=lambda x: x["time"])
+    else:
+        data = [a for a in ACTIVITY if a["time"] < today]
+        data = sorted(data, key=lambda x: x["time"], reverse=True)
+    total = len(data)
+    start = (page - 1) * size
+    return ok(data[start:start + size], total=total)
+
+@app.get("/activity/future")
+def activity_future():
+    today = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    data = sorted([a for a in ACTIVITY if a["time"] >= today], key=lambda x: x["time"])
+    return ok(data)
+
+@app.get("/activity/past")
+def activity_past():
+    today = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    data = sorted([a for a in ACTIVITY if a["time"] < today], key=lambda x: x["time"], reverse=True)
+    return ok(data)
+
+@app.get("/activity/detail")
+def activity_detail(id: str):
+    item = next((a for a in ACTIVITY if a["id"] == id), None)
+    if not item:
+        return err("动态不存在")
+    return ok(item)
+
+@app.get("/activity/history")
+def activity_history():
+    """历史上的今天"""
+    today = date.today()
+    mmdd = f"{today.month:02d}-{today.day:02d}"
+    music = [
+        {"id": m["id"], "name": m["name"], "publish_time": m["publish_time"]}
+        for m in MUSIC
+        if m.get("publish_time") and m["publish_time"][5:10] == mmdd
+    ]
+    video = [
+        {"id": v["id"], "name": v["name"], "publish_time": v["publish_time"]}
+        for v in VIDEO
+        if v.get("publish_time") and v["publish_time"][5:10] == mmdd
+    ]
+    pic = [
+        {"id": p["id"], "name": p["name"], "date": p["date"]}
+        for p in PIC
+        if p.get("date") and p["date"][5:10] == mmdd
+    ]
+    activity = [
+        {"id": a["id"], "name": a["name"], "time": a["time"]}
+        for a in ACTIVITY
+        if a.get("time") and a["time"][5:10] == mmdd
+    ]
+    return ok({"music": music, "video": video, "pic": pic, "activity": activity})
+
+# ============================================================
+# 视频接口
+# ============================================================
+
+@app.get("/video/latest")
+def video_latest():
+    return ok(VIDEO[:6])
+
+@app.get("/video/filter")
+def video_filter(
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=200),
+    q: str = Query(""),
+    video_type: Optional[List[str]] = Query(None, alias="video_type"),
+    year: Optional[str] = Query(None),
+    month: Optional[str] = Query(None),
+    duration: Optional[str] = Query(None),
+):
+    data = VIDEO[:]
+    if q:
+        q_lower = q.lower()
+        data = [v for v in data if q_lower in v["name"].lower()]
+    if video_type:
+        data = [v for v in data if v["type"] in video_type]
+    if year:
+        data = [v for v in data if v.get("publish_time", "").startswith(year)]
+    if month:
+        data = [v for v in data if v.get("publish_time", "")[5:7] == month.zfill(2)]
+    if duration == "s":
+        data = [v for v in data if v["duration"] < 300]
+    elif duration == "m":
+        data = [v for v in data if 300 <= v["duration"] < 1200]
+    elif duration == "l":
+        data = [v for v in data if v["duration"] >= 1200]
+    total = len(data)
+    start = (page - 1) * size
+    result = data[start:start + size]
+    return ok(result, total=total)
+
+@app.get("/video/detail")
+def video_detail(id: str):
+    item = next((v for v in VIDEO if v["id"] == id), None)
+    if not item:
+        return err("视频不存在")
+    return ok(item)
+
+@app.get("/video/attr")
+def video_attr():
+    return ok(VIDEO_ATTR)
+
+# ============================================================
+# 图库接口
+# ============================================================
+
+@app.get("/pic/latest")
+def pic_latest():
+    return ok(PIC[:6])
+
+@app.get("/pic/filter")
+def pic_filter(
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=200),
+    q: str = Query(""),
+    pic_type: Optional[List[str]] = Query(None, alias="pic_type"),
+    year: Optional[str] = Query(None),
+    month: Optional[str] = Query(None),
+    tags: Optional[List[str]] = Query(None),
+):
+    data = PIC[:]
+    if q:
+        q_lower = q.lower()
+        data = [p for p in data if q_lower in p["name"].lower()]
+    if pic_type:
+        data = [p for p in data if p["type"] in pic_type]
+    if year:
+        data = [p for p in data if p.get("date", "").startswith(year)]
+    if month:
+        data = [p for p in data if p.get("date", "")[5:7] == month.zfill(2)]
+    if tags:
+        data = [p for p in data if any(t in (p.get("tags") or []) for t in tags)]
+    total = len(data)
+    start = (page - 1) * size
+    return ok(data[start:start + size], total=total)
+
+@app.get("/pic/detail")
+def pic_detail(id: str):
+    item = next((p for p in PIC if p["id"] == id), None)
+    if not item:
+        return err("图集不存在")
+    return ok(item)
+
+@app.get("/pic/attr")
+def pic_attr():
+    return ok(PIC_ATTR)
+
+@app.get("/pic/ai_search")
+def pic_ai_search(
+    type: str = Query("pic"),
+    q: str = Query(""),
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1),
+):
+    data = PIC[:]
+    if q:
+        q_lower = q.lower()
+        data = [p for p in data if q_lower in p["name"].lower() or q_lower in (p.get("note") or "").lower()]
+    total = len(data)
+    start = (page - 1) * size
+    return ok({"total": total, "list": data[start:start + size]})
+
+# ============================================================
+# 博物馆接口
+# ============================================================
+
+@app.get("/museum/latest")
+def museum_latest():
+    return ok(MUSEUM[:6])
+
+@app.get("/museum/filter")
+def museum_filter(
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=200),
+    q: str = Query(""),
+    year: Optional[List[str]] = Query(None),
+    activity: Optional[List[str]] = Query(None),
+    type: Optional[List[str]] = Query(None),
+    publish_method: Optional[List[str]] = Query(None),
+):
+    data = MUSEUM[:]
+    if q:
+        q_lower = q.lower()
+        data = [m for m in data if q_lower in m["name"].lower() or q_lower in (m.get("note") or "").lower()]
+    if year:
+        data = [m for m in data if m.get("year") in year]
+    if activity:
+        data = [m for m in data if m["name"] in activity]
+    if type:
+        data = [m for m in data if m["type"] in type]
+    if publish_method:
+        data = [m for m in data if m["publish_method"] in publish_method]
+    total = len(data)
+    start = (page - 1) * size
+    return ok(data[start:start + size], total=total)
+
+@app.get("/museum/detail")
+def museum_detail(id: str):
+    item = next((m for m in MUSEUM if m["id"] == id), None)
+    if not item:
+        return err("周边不存在")
+    return ok(item)
+
+@app.get("/museum/attr")
+def museum_attr():
+    return ok(MUSEUM_ATTR)
+
+# ============================================================
+# 歌词搜索
+# ============================================================
+
+@app.get("/lyric/search")
+def lyric_search(q: str = Query("")):
+    if not q:
+        return ok([])
+    q_lower = q.lower()
+    results = [
+        {"id": m["id"], "name": m["name"], "lyric": m.get("lyric") or ""}
+        for m in MUSIC
+        if q_lower in (m.get("lyric") or "").lower() or q_lower in m["name"].lower()
+    ]
+    return ok(results[:20])
+
+# ============================================================
+# 健康检查
+# ============================================================
+
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "王梓钰 Wiki API 运行中",
+        "music_count": len(MUSIC),
+        "video_count": len(VIDEO),
+        "pic_count": len(PIC),
+        "museum_count": len(MUSEUM),
+        "activity_count": len(ACTIVITY),
+    }
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+# ============================================================
+# LRC 歌词代理接口（解决 OSS CORS 问题）
+# ============================================================
+
+@app.get("/lyric")
+def lyric_proxy(url: str = Query(..., description="OSS LRC 文件 URL")):
+    """代理请求 OSS 上的 LRC 文件，解决浏览器 CORS 限制"""
+    from urllib.parse import urlparse, quote
+    # 只允许代理阿里云 OSS 域名，防止 SSRF
+    allowed_hosts = [
+        "wzywiki1.oss-cn-guangzhou.aliyuncs.com",
+        "wzywiki1.oss-cn-guangzhou-internal.aliyuncs.com",
+    ]
+    try:
+        parsed = urlparse(url)
+        if parsed.netloc not in allowed_hosts:
+            return Response(content="不允许的域名", status_code=403, media_type="text/plain; charset=utf-8")
+        # 对路径中的中文和空格进行 URL 编码（保留已编码的 %xx 不重复编码）
+        safe_path = quote(parsed.path, safe="/%")
+        safe_query = quote(parsed.query, safe="=&%") if parsed.query else ""
+        encoded_url = f"{parsed.scheme}://{parsed.netloc}{safe_path}"
+        if safe_query:
+            encoded_url += f"?{safe_query}"
+        req = urllib.request.Request(encoded_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            content = resp.read().decode("utf-8", errors="replace")
+        return Response(
+            content=content,
+            media_type="text/plain; charset=utf-8",
+            headers={"Cache-Control": "public, max-age=86400"},
+        )
+    except urllib.error.HTTPError as e:
+        return Response(content=f"OSS 请求失败: {e.code}", status_code=502, media_type="text/plain")
+    except Exception as e:
+        return Response(content=f"代理错误: {str(e)}", status_code=500, media_type="text/plain")
+
+
+
+@app.get("/imgproxy")
+def imgproxy(url: str = Query(...)):
+    import urllib.request
+    from urllib.parse import urlparse
+    allowed_hosts = [
+        "i0.hdslb.com", "i1.hdslb.com", "i2.hdslb.com",
+        "s1.hdslb.com", "s2.hdslb.com",
+    ]
+    try:
+        parsed = urlparse(url)
+        if parsed.netloc not in allowed_hosts:
+            return Response(content="not allowed", status_code=403, media_type="text/plain")
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Referer": "https://www.bilibili.com",
+            }
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            content = resp.read()
+            content_type = resp.headers.get("Content-Type", "image/jpeg")
+        return Response(
+            content=content,
+            media_type=content_type,
+            headers={"Cache-Control": "public, max-age=86400"},
+        )
+    except Exception as e:
+        return Response(content=str(e), status_code=500, media_type="text/plain")
+
+
+# ============================================================
+# AI 对话代理接口（代理 SiliconFlow，隐藏 API Key，支持流式）
+# ============================================================
+
+import httpx
+from fastapi import Request
+from fastapi.responses import StreamingResponse
+
+SILICONFLOW_API_KEY = "sk-sxtcwnnsukfhwksgymgarvryxwtveezpeekehtxwblqwvtam"
+SILICONFLOW_BASE_URL = "https://api.siliconflow.cn/v1"
+
+# 仅支持文本对话的模型列表（过滤掉图像/音频/嵌入等模型）
+CHAT_MODELS = [
+    "deepseek-ai/DeepSeek-V3",
+    "deepseek-ai/DeepSeek-R1",
+    "deepseek-ai/DeepSeek-V2.5",
+    "Qwen/Qwen2.5-72B-Instruct",
+    "Qwen/Qwen2.5-32B-Instruct",
+    "Qwen/Qwen2.5-14B-Instruct",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/QwQ-32B",
+    "Qwen/Qwen3-235B-A22B",
+    "Qwen/Qwen3-32B",
+    "Qwen/Qwen3-14B",
+    "Qwen/Qwen3-8B",
+    "THUDM/GLM-4-32B-0414",
+    "THUDM/GLM-Z1-32B-0414",
+    "Pro/Qwen/Qwen2.5-7B-Instruct",
+    "Pro/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "moonshotai/Kimi-K2-Instruct-0905",
+    "internlm/internlm2_5-7b-chat",
+]
+
+@app.get("/chat/models")
+def chat_models():
+    """返回可用的对话模型列表"""
+    return ok(CHAT_MODELS)
+
+@app.post("/chat/completions")
+async def chat_completions(request: Request):
+    """
+    代理 SiliconFlow Chat Completions 接口，支持流式和非流式。
+    前端直接 POST 到此接口，API Key 存储在服务端，不暴露给浏览器。
+    """
+    body = await request.json()
+    stream = body.get("stream", False)
+
+    headers = {
+        "Authorization": f"Bearer {SILICONFLOW_API_KEY}",
+        "Content-Type": "application/json",
+        "Accept": "text/event-stream" if stream else "application/json",
+    }
+
+    if stream:
+        async def generate():
+            async with httpx.AsyncClient(timeout=120) as client:
+                async with client.stream(
+                    "POST",
+                    f"{SILICONFLOW_BASE_URL}/chat/completions",
+                    json=body,
+                    headers=headers,
+                ) as resp:
+                    async for chunk in resp.aiter_bytes():
+                        yield chunk
+
+        return StreamingResponse(
+            generate(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "X-Accel-Buffering": "no",
+            },
+        )
+    else:
+        async with httpx.AsyncClient(timeout=120) as client:
+            resp = await client.post(
+                f"{SILICONFLOW_BASE_URL}/chat/completions",
+                json=body,
+                headers=headers,
+            )
+            return resp.json()
+

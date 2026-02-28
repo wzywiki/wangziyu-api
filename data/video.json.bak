@@ -1,0 +1,66 @@
+[
+  {
+    "id": "395119d4afbf81ba4174bc89",
+    "name": "【王梓钰】《镜迷宫》MV",
+    "publish_time": "2025-12-13T00:00:00",
+    "type": "MV",
+    "duration": 245,
+    "cover": "",
+    "sources": [
+      {
+        "platform": "bilibili",
+        "aid": "",
+        "bvid": ""
+      }
+    ],
+    "cover_url": null
+  },
+  {
+    "id": "baea744b9dbfbd51cedbebe3",
+    "name": "【王梓钰】《晴空告白》MV",
+    "publish_time": "2025-12-10T00:00:00",
+    "type": "MV",
+    "duration": 218,
+    "cover": "",
+    "sources": [
+      {
+        "platform": "bilibili",
+        "aid": "",
+        "bvid": ""
+      }
+    ],
+    "cover_url": null
+  },
+  {
+    "id": "c0a5e7fe9b8a3fc849034bb9",
+    "name": "【王梓钰】2025武汉专场演唱会",
+    "publish_time": "2025-08-09T00:00:00",
+    "type": "LIVE",
+    "duration": 7200,
+    "cover": "",
+    "sources": [
+      {
+        "platform": "bilibili",
+        "aid": "",
+        "bvid": ""
+      }
+    ],
+    "cover_url": null
+  },
+  {
+    "id": "50473cd90c8eb8cdc996d5db",
+    "name": "【王梓钰】《幸运论》MV",
+    "publish_time": "2025-05-22T00:00:00",
+    "type": "MV",
+    "duration": 230,
+    "cover": "",
+    "sources": [
+      {
+        "platform": "bilibili",
+        "aid": "",
+        "bvid": ""
+      }
+    ],
+    "cover_url": null
+  }
+]

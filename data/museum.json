@@ -1,0 +1,723 @@
+[
+  {
+    "id": "c24af9d07221861e0f5fb981",
+    "name": "音阙诗听巡演",
+    "note": "2018年 · 音阙诗听巡演",
+    "publish_date": "2018-01-01T00:00:00",
+    "year": "2018",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2018_音阙诗听巡演_明信片_1.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "明信片",
+      "照片"
+    ],
+    "item_count": 2,
+    "items": [
+      {
+        "id": "1",
+        "type": "明信片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2018_音阙诗听巡演_明信片_1.jpeg",
+        "filename": "2018_音阙诗听巡演_明信片_1.jpeg"
+      },
+      {
+        "id": "36",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2018_音阙诗听巡演_照片_36.jpeg",
+        "filename": "2018_音阙诗听巡演_照片_36.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "dc2de28c73e7eeef00baa3bb",
+    "name": "音阙诗听三周年",
+    "note": "2019年 · 音阙诗听三周年",
+    "publish_date": "2019-01-01T00:00:00",
+    "year": "2019",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2019_音阙诗听三周年_海报_签名版_2.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "发卡"
+    ],
+    "item_count": 2,
+    "items": [
+      {
+        "id": "2",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2019_音阙诗听三周年_海报_签名版_2.jpeg",
+        "filename": "2019_音阙诗听三周年_海报_签名版_2.jpeg"
+      },
+      {
+        "id": "13",
+        "type": "发卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2019_音阙诗听三周年_发卡_13.jpeg",
+        "filename": "2019_音阙诗听三周年_发卡_13.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "f9cd6452892403c062ebcbeb",
+    "name": "抽奖",
+    "note": "2021年 · 抽奖",
+    "publish_date": "2021-01-01T00:00:00",
+    "year": "2021",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_抽奖_照片_3.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "照片"
+    ],
+    "item_count": 3,
+    "items": [
+      {
+        "id": "3",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_抽奖_照片_3.jpeg",
+        "filename": "2021_抽奖_照片_3.jpeg"
+      },
+      {
+        "id": "4",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_抽奖_照片_4.jpeg",
+        "filename": "2021_抽奖_照片_4.jpeg"
+      },
+      {
+        "id": "59",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_抽奖_海报_签名版_59.jpeg",
+        "filename": "2021_抽奖_海报_签名版_59.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "542da0d250f5a3090376446a",
+    "name": "《长夜》抽奖（0118）",
+    "note": "2021年 · 《长夜》抽奖（0118）",
+    "publish_date": "2021-01-18T00:00:00",
+    "year": "2021",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_长夜抽奖0118_照片_60.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "照片"
+    ],
+    "item_count": 3,
+    "items": [
+      {
+        "id": "60",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_长夜抽奖0118_照片_60.jpeg",
+        "filename": "2021_长夜抽奖0118_照片_60.jpeg"
+      },
+      {
+        "id": "61",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_长夜抽奖0118_照片_61.jpeg",
+        "filename": "2021_长夜抽奖0118_照片_61.jpeg"
+      },
+      {
+        "id": "62",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_长夜抽奖0118_海报_签名版_62.jpeg",
+        "filename": "2021_长夜抽奖0118_海报_签名版_62.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "f410fcadae2de6945875f42b",
+    "name": "滴滴哒（0926）",
+    "note": "2021年 · 滴滴哒（0926）",
+    "publish_date": "2021-09-26T00:00:00",
+    "year": "2021",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_照片_51.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "小卡/歌词卡/透卡",
+      "照片"
+    ],
+    "item_count": 5,
+    "items": [
+      {
+        "id": "51",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_照片_51.jpeg",
+        "filename": "2021_滴滴哒0926_照片_51.jpeg"
+      },
+      {
+        "id": "52",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_照片_52.jpeg",
+        "filename": "2021_滴滴哒0926_照片_52.jpeg"
+      },
+      {
+        "id": "57",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_照片_57.jpeg",
+        "filename": "2021_滴滴哒0926_照片_57.jpeg"
+      },
+      {
+        "id": "63",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_小卡_歌词卡_透卡_63.jpeg",
+        "filename": "2021_滴滴哒0926_小卡_歌词卡_透卡_63.jpeg"
+      },
+      {
+        "id": "64",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_滴滴哒0926_小卡_歌词卡_透卡_64.jpeg",
+        "filename": "2021_滴滴哒0926_小卡_歌词卡_透卡_64.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "52f77f10da90d4ed25ca2a3a",
+    "name": "等一下（1106）",
+    "note": "2021年 · 等一下（1106）",
+    "publish_date": "2021-11-06T00:00:00",
+    "year": "2021",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_布袋_5.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "贴纸",
+      "鼠标垫",
+      "卡册",
+      "布袋",
+      "小卡/歌词卡/透卡",
+      "照片"
+    ],
+    "item_count": 10,
+    "items": [
+      {
+        "id": "5",
+        "type": "布袋",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_布袋_5.jpeg",
+        "filename": "2021_等一下1106_布袋_5.jpeg"
+      },
+      {
+        "id": "6",
+        "type": "贴纸",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_贴纸_6.jpeg",
+        "filename": "2021_等一下1106_贴纸_6.jpeg"
+      },
+      {
+        "id": "7",
+        "type": "鼠标垫",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_鼠标垫_7.jpeg",
+        "filename": "2021_等一下1106_鼠标垫_7.jpeg"
+      },
+      {
+        "id": "8",
+        "type": "卡册",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_卡册_8.jpeg",
+        "filename": "2021_等一下1106_卡册_8.jpeg"
+      },
+      {
+        "id": "44",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_小卡_歌词卡_透卡_44.jpeg",
+        "filename": "2021_等一下1106_小卡_歌词卡_透卡_44.jpeg"
+      },
+      {
+        "id": "53",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_小卡_歌词卡_透卡_53.jpeg",
+        "filename": "2021_等一下1106_小卡_歌词卡_透卡_53.jpeg"
+      },
+      {
+        "id": "54",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_照片_54.jpeg",
+        "filename": "2021_等一下1106_照片_54.jpeg"
+      },
+      {
+        "id": "55",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_照片_55.jpeg",
+        "filename": "2021_等一下1106_照片_55.jpeg"
+      },
+      {
+        "id": "58",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_照片_58.jpeg",
+        "filename": "2021_等一下1106_照片_58.jpeg"
+      },
+      {
+        "id": "65",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2021_等一下1106_照片_65.jpeg",
+        "filename": "2021_等一下1106_照片_65.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "d19735f6ce30d0405aa93b4d",
+    "name": "音阙诗听小宇宙巡演",
+    "note": "2022年 · 音阙诗听小宇宙巡演",
+    "publish_date": "2022-01-01T00:00:00",
+    "year": "2022",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_小卡_歌词卡_透卡_20.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "扇子/竹签",
+      "钥匙扣",
+      "纸袋",
+      "小卡/歌词卡/透卡",
+      "照片"
+    ],
+    "item_count": 11,
+    "items": [
+      {
+        "id": "20",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_小卡_歌词卡_透卡_20.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_小卡_歌词卡_透卡_20.jpeg"
+      },
+      {
+        "id": "39",
+        "type": "纸袋",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_纸袋_39.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_纸袋_39.jpeg"
+      },
+      {
+        "id": "40",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_海报_签名版_40.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_海报_签名版_40.jpeg"
+      },
+      {
+        "id": "41",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_海报_签名版_41.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_海报_签名版_41.jpeg"
+      },
+      {
+        "id": "46",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_海报_签名版_46.png",
+        "filename": "2022_音阙诗听小宇宙巡演_海报_签名版_46.png"
+      },
+      {
+        "id": "50",
+        "type": "钥匙扣",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_钥匙扣_50.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_钥匙扣_50.jpeg"
+      },
+      {
+        "id": "66",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_照片_66.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_照片_66.jpeg"
+      },
+      {
+        "id": "67",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_照片_67.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_照片_67.jpeg"
+      },
+      {
+        "id": "68",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_照片_68.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_照片_68.jpeg"
+      },
+      {
+        "id": "69",
+        "type": "扇子/竹签",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_扇子_竹签_69.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_扇子_竹签_69.jpeg"
+      },
+      {
+        "id": "70",
+        "type": "扇子/竹签",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2022_音阙诗听小宇宙巡演_扇子_竹签_70.jpeg",
+        "filename": "2022_音阙诗听小宇宙巡演_扇子_竹签_70.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "e0d012a8f866908b640fc09f",
+    "name": "2022年及以前",
+    "note": "未知年 · 2022年及以前",
+    "publish_date": "2022-01-01T00:00:00",
+    "year": "未知",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/未知时间_2022年及以前_照片_26.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "照片"
+    ],
+    "item_count": 3,
+    "items": [
+      {
+        "id": "26",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/未知时间_2022年及以前_照片_26.jpeg",
+        "filename": "未知时间_2022年及以前_照片_26.jpeg"
+      },
+      {
+        "id": "42",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/未知时间_2022年及以前_海报_签名版_42.jpeg",
+        "filename": "未知时间_2022年及以前_海报_签名版_42.jpeg"
+      },
+      {
+        "id": "43",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/未知时间_2022年及以前_海报_签名版_43.jpeg",
+        "filename": "未知时间_2022年及以前_海报_签名版_43.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "c0731a79bd75a8ce72d2458f",
+    "name": "夏日音乐派对（0622）",
+    "note": "2023年 · 夏日音乐派对（0622）",
+    "publish_date": "2023-06-22T00:00:00",
+    "year": "2023",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_夏日音乐派对0622_小卡_歌词卡_透卡_9.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "撕拉片",
+      "明信片",
+      "小卡/歌词卡/透卡",
+      "贴纸"
+    ],
+    "item_count": 4,
+    "items": [
+      {
+        "id": "9",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_夏日音乐派对0622_小卡_歌词卡_透卡_9.jpeg",
+        "filename": "2023_夏日音乐派对0622_小卡_歌词卡_透卡_9.jpeg"
+      },
+      {
+        "id": "11",
+        "type": "明信片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_夏日音乐派对0622_明信片_11.jpeg",
+        "filename": "2023_夏日音乐派对0622_明信片_11.jpeg"
+      },
+      {
+        "id": "12",
+        "type": "贴纸",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_夏日音乐派对0622_贴纸_12.jpeg",
+        "filename": "2023_夏日音乐派对0622_贴纸_12.jpeg"
+      },
+      {
+        "id": "16",
+        "type": "撕拉片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_夏日音乐派对0622_撕拉片_16.jpeg",
+        "filename": "2023_夏日音乐派对0622_撕拉片_16.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "35fe402a3f32a009836bf080",
+    "name": "久久专场",
+    "note": "2023年 · 久久专场",
+    "publish_date": "2023-09-09T00:00:00",
+    "year": "2023",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_布袋_14.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "贴纸",
+      "门票/入场券",
+      "明信片",
+      "日历",
+      "御守",
+      "布袋",
+      "小卡/歌词卡/透卡",
+      "撕拉片"
+    ],
+    "item_count": 14,
+    "items": [
+      {
+        "id": "14",
+        "type": "布袋",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_布袋_14.jpeg",
+        "filename": "2023_久久专场_布袋_14.jpeg"
+      },
+      {
+        "id": "15",
+        "type": "贴纸",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_贴纸_15.jpeg",
+        "filename": "2023_久久专场_贴纸_15.jpeg"
+      },
+      {
+        "id": "17",
+        "type": "撕拉片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_撕拉片_17.jpeg",
+        "filename": "2023_久久专场_撕拉片_17.jpeg"
+      },
+      {
+        "id": "18",
+        "type": "明信片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_明信片_18.jpeg",
+        "filename": "2023_久久专场_明信片_18.jpeg"
+      },
+      {
+        "id": "19",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_海报_签名版_19.jpeg",
+        "filename": "2023_久久专场_海报_签名版_19.jpeg"
+      },
+      {
+        "id": "21",
+        "type": "贴纸",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_贴纸_21.jpeg",
+        "filename": "2023_久久专场_贴纸_21.jpeg"
+      },
+      {
+        "id": "23",
+        "type": "布袋",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_布袋_23.jpeg",
+        "filename": "2023_久久专场_布袋_23.jpeg"
+      },
+      {
+        "id": "24",
+        "type": "日历",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_日历_24.jpeg",
+        "filename": "2023_久久专场_日历_24.jpeg"
+      },
+      {
+        "id": "28",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_小卡_歌词卡_透卡_28.jpeg",
+        "filename": "2023_久久专场_小卡_歌词卡_透卡_28.jpeg"
+      },
+      {
+        "id": "29",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_海报_签名版_29.jpeg",
+        "filename": "2023_久久专场_海报_签名版_29.jpeg"
+      },
+      {
+        "id": "31",
+        "type": "御守",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_御守_31.jpeg",
+        "filename": "2023_久久专场_御守_31.jpeg"
+      },
+      {
+        "id": "32",
+        "type": "御守",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_御守_32.jpeg",
+        "filename": "2023_久久专场_御守_32.jpeg"
+      },
+      {
+        "id": "35",
+        "type": "日历",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_日历_35.jpeg",
+        "filename": "2023_久久专场_日历_35.jpeg"
+      },
+      {
+        "id": "37",
+        "type": "门票/入场券",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_久久专场_门票_入场券_37.jpeg",
+        "filename": "2023_久久专场_门票_入场券_37.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "43f92728b5b69967d17ed23a",
+    "name": "婧钰双声",
+    "note": "2023年 · 婧钰双声",
+    "publish_date": "2023-11-29T00:00:00",
+    "year": "2023",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_冰箱贴_22.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "气囊支架",
+      "冰箱贴",
+      "饮用水",
+      "纸袋",
+      "小卡/歌词卡/透卡"
+    ],
+    "item_count": 7,
+    "items": [
+      {
+        "id": "22",
+        "type": "冰箱贴",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_冰箱贴_22.jpeg",
+        "filename": "2023_婧钰双声_冰箱贴_22.jpeg"
+      },
+      {
+        "id": "25",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_小卡_歌词卡_透卡_25.jpeg",
+        "filename": "2023_婧钰双声_小卡_歌词卡_透卡_25.jpeg"
+      },
+      {
+        "id": "27",
+        "type": "饮用水",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_饮用水_27.jpeg",
+        "filename": "2023_婧钰双声_饮用水_27.jpeg"
+      },
+      {
+        "id": "30",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_小卡_歌词卡_透卡_30.jpeg",
+        "filename": "2023_婧钰双声_小卡_歌词卡_透卡_30.jpeg"
+      },
+      {
+        "id": "33",
+        "type": "纸袋",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_纸袋_33.jpeg",
+        "filename": "2023_婧钰双声_纸袋_33.jpeg"
+      },
+      {
+        "id": "34",
+        "type": "气囊支架",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_气囊支架_34.jpeg",
+        "filename": "2023_婧钰双声_气囊支架_34.jpeg"
+      },
+      {
+        "id": "38",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2023_婧钰双声_海报_签名版_38.jpeg",
+        "filename": "2023_婧钰双声_海报_签名版_38.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "5d3f069058292480f4f88df0",
+    "name": "国风起时",
+    "note": "2026年 · 国风起时",
+    "publish_date": "2026-01-01T00:00:00",
+    "year": "2026",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2026_国风起时_小卡_歌词卡_透卡_45.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "小卡/歌词卡/透卡"
+    ],
+    "item_count": 1,
+    "items": [
+      {
+        "id": "45",
+        "type": "小卡/歌词卡/透卡",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2026_国风起时_小卡_歌词卡_透卡_45.jpeg",
+        "filename": "2026_国风起时_小卡_歌词卡_透卡_45.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "994134c2bfec4c3266a7754b",
+    "name": "抽奖（0216）",
+    "note": "2026年 · 抽奖（0216）",
+    "publish_date": "2026-02-16T00:00:00",
+    "year": "2026",
+    "type": "活动周边",
+    "publish_method": "活动现场",
+    "cover": "",
+    "cover_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2026_抽奖0216_照片_47.jpeg",
+    "dimension": {
+      "w": 0,
+      "d": 0,
+      "h": 0
+    },
+    "item_types": [
+      "海报/签名版",
+      "照片"
+    ],
+    "item_count": 2,
+    "items": [
+      {
+        "id": "47",
+        "type": "照片",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2026_抽奖0216_照片_47.jpeg",
+        "filename": "2026_抽奖0216_照片_47.jpeg"
+      },
+      {
+        "id": "48",
+        "type": "海报/签名版",
+        "image_url": "https://wzywiki1.oss-cn-guangzhou.aliyuncs.com/博物馆/2026_抽奖0216_海报_签名版_48.jpeg",
+        "filename": "2026_抽奖0216_海报_签名版_48.jpeg"
+      }
+    ]
+  }
+]
