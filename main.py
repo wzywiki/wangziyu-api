@@ -564,3 +564,94 @@ async def chat_completions(request: Request):
             )
             return resp.json()
 
+
+
+# ===================== 留言板 API =====================
+import os, json as _json
+from datetime import datetime as _dt
+
+GUESTBOOK_DIR = os.path.join(os.path.dirname(__file__), "data", "guestbook")
+os.makedirs(GUESTBOOK_DIR, exist_ok=True)
+
+def _gb_file(visitor_id: str) -> str:
+    # 对 visitor_id 做简单清理，防止路径穿越
+    safe_id = "".join(c for c in visitor_id if c.isalnum() or c in "-_")[:64]
+    return os.path.join(GUESTBOOK_DIR, f"{safe_id}.json")
+
+@app.get("/guestbook")
+def get_guestbook(visitor_id: str):
+    """获取指定访客的留言列表；visitor_id=wili 时返回所有人的留言（管理员模式）"""
+    # 管理员模式：返回所有访客的留言
+    if visitor_id.strip() == "wili":
+        all_messages = []
+        if os.path.exists(GUESTBOOK_DIR):
+            for fname in sorted(os.listdir(GUESTBOOK_DIR)):
+                if fname.endswith(".json"):
+                    fpath = os.path.join(GUESTBOOK_DIR, fname)
+                    try:
+                        with open(fpath, "r", encoding="utf-8") as f:
+                            msgs = _json.load(f)
+                            # 给每条留言加上 visitor_id 标识
+                            vid = fname[:-5]  # 去掉 .json
+                            for m in msgs:
+                                m["visitor_id"] = vid
+                            all_messages.extend(msgs)
+                    except Exception:
+                        pass
+        # 按时间排序
+        all_messages.sort(key=lambda x: x.get("time", ""))
+        return ok(all_messages)
+    # 普通模式：只返回该访客自己的留言
+    path = _gb_file(visitor_id)
+    if not os.path.exists(path):
+        return ok([])
+    with open(path, "r", encoding="utf-8") as f:
+        return ok(_json.load(f))
+
+@app.post("/guestbook")
+async def post_guestbook(request: Request):
+    """提交一条留言"""
+    body = await request.json()
+    visitor_id = body.get("visitor_id", "").strip()
+    content = body.get("content", "").strip()
+    nickname = body.get("nickname", "访客").strip() or "访客"
+    if not visitor_id or not content:
+        return {"status": 1, "msg": "参数缺失"}
+    if len(content) > 500:
+        return {"status": 1, "msg": "留言不能超过500字"}
+    path = _gb_file(visitor_id)
+    messages = []
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            messages = _json.load(f)
+    msg = {
+        "id": _dt.now().strftime("%Y%m%d%H%M%S%f"),
+        "content": content,
+        "nickname": nickname,
+        "time": _dt.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    messages.append(msg)
+    with open(path, "w", encoding="utf-8") as f:
+        _json.dump(messages, f, ensure_ascii=False, indent=2)
+    return ok(msg)
+
+@app.delete("/guestbook/{msg_id}")
+def delete_guestbook(msg_id: str, visitor_id: str):
+    """软删除：标记指定访客的某条留言为已删除，保留数据不真正删除"""
+    path = _gb_file(visitor_id)
+    if not os.path.exists(path):
+        return {"status": 1, "msg": "未找到"}
+    with open(path, "r", encoding="utf-8") as f:
+        messages = _json.load(f)
+    found = False
+    for m in messages:
+        if m["id"] == msg_id:
+            m["deleted"] = True
+            m["deleted_at"] = _dt.now().strftime("%Y-%m-%d %H:%M:%S")
+            found = True
+            break
+    if not found:
+        return {"status": 1, "msg": "未找到该留言"}
+    with open(path, "w", encoding="utf-8") as f:
+        _json.dump(messages, f, ensure_ascii=False, indent=2)
+    return ok({"deleted": msg_id})
